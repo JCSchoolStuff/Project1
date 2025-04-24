@@ -24,51 +24,51 @@ class Logic(QMainWindow, Ui_MainWindow):
         calculates letter grades,
         writes students, scores, and letter grades to a csv file.
         """
-        student_count = self.num_students.text().strip()
-        grades_list = self.student_grades.text().split(', ')
+        self.__student_count = self.num_students.text().strip()
+        self.__grades_list = self.student_grades.text().split(', ')
         print("Running")
         try:
-            if student_count == '':
+            if self.__student_count == '':
                 raise ValueError
             else:
-                int(student_count)
-            for pos, grade in enumerate(grades_list):
-                grades_list[pos] = int(grade.strip())
+                int(self.__student_count)
+            for pos, grade in enumerate(self.__grades_list):
+                self.__grades_list[pos] = int(grade.strip())
                 if grade == '':
                     raise ValueError
-            if len(grades_list) != int(student_count):
+            if len(self.__grades_list) != int(self.__student_count):
                 raise IndexError
 
-            avg = sum(grades_list) / len(grades_list)
-            grades_list.append(avg)
+            self.__avg = sum(self.__grades_list) / len(self.__grades_list)
+            self.__grades_list.append(self.__avg)
 
-            best_grade = max(grades_list)
-            letter_grade = []
-            for grade in grades_list:
-                if grade >= best_grade - 10:
-                    letter_grade.append('A')
-                elif grade >= best_grade - 20:
-                    letter_grade.append('B')
-                elif grade >= best_grade - 30:
-                    letter_grade.append('C')
-                elif grade >= best_grade - 40:
-                    letter_grade.append('D')
+            self.__best_grade = max(self.__grades_list)
+            self.__letter_grade = []
+            for grade in self.__grades_list:
+                if grade >= self.__best_grade - 10:
+                    self.__letter_grade.append('A')
+                elif grade >= self.__best_grade - 20:
+                    self.__letter_grade.append('B')
+                elif grade >= self.__best_grade - 30:
+                    self.__letter_grade.append('C')
+                elif grade >= self.__best_grade - 40:
+                    self.__letter_grade.append('D')
                 else:
-                    letter_grade.append('F')
+                    self.__letter_grade.append('F')
 
 
             with open('students.csv', 'w', newline='') as csvfile:
                 writer = csv.writer(csvfile)
-                for student in range(int(student_count)):
-                    writer.writerow([student, grades_list[student],letter_grade[student]])
-                writer.writerow(['Average', avg, letter_grade[len(letter_grade)-1]])
+                for student in range(int(self.__student_count)):
+                    writer.writerow([student, self.__grades_list[student],self.__letter_grade[student]])
+                writer.writerow(['Average', self.__avg, self.__letter_grade[len(self.__letter_grade)-1]])
 
             with open('students.csv', 'r', newline='') as csvfile:
                 reader = csv.reader(csvfile)
                 final_results = ''
                 for row in reader:
                     if row[0] == 'Average':
-                        final_results += f'The average score is {avg:.2f}, a grade of {letter_grade[len(letter_grade) - 1]}'
+                        final_results += f'The average score is {self.__avg:.2f}, a grade of {self.__letter_grade[len(self.__letter_grade) - 1]}'
                     else:
                         final_results += f'Student {int(row[0]) + 1} score is {row[1]} and grade is {row[2]}\n'
                 self.results_label.setText(final_results)
