@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>356</height>
+    <width>436</width>
+    <height>672</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -23,76 +23,230 @@
    <widget class="QLineEdit" name="num_students">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>20</y>
+      <x>20</x>
+      <y>75</y>
       <width>241</width>
       <height>31</height>
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="student_grades">
+   <widget class="QPushButton" name="scores_submit">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>120</y>
-      <width>241</width>
-      <height>61</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>240</y>
+      <x>20</x>
+      <y>530</y>
       <width>241</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>SUBMIT</string>
+     <string>SUBMIT SCORES</string>
     </property>
    </widget>
    <widget class="QLabel" name="students_label">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>25</y>
+      <x>270</x>
+      <y>80</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Number of students (1-5)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="class_name">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>15</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="class_label">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>20</y>
       <width>121</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Number of students</string>
+     <string>Class Name</string>
     </property>
    </widget>
-   <widget class="QLabel" name="grades_label">
+   <widget class="QLabel" name="submit_info">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>125</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>List of grades (Separate with commas)</string>
-    </property>
-    <property name="wordWrap">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="results_label">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>20</y>
-      <width>281</width>
-      <height>251</height>
+      <x>20</x>
+      <y>570</y>
+      <width>241</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="student1_grade">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>113</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="scores_label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Scores (0-100)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="student1_label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>230</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Student 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="student2_label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>290</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Student 2</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="student2_grade">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>280</y>
+      <width>113</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="student3_label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>350</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Student 3</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="student3_grade">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>340</y>
+      <width>113</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="student4_label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>410</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Student 4</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="student4_grade">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>400</y>
+      <width>113</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="student5_label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>470</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Student 5</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="student5_grade">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>460</y>
+      <width>113</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="class_submit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <italic>false</italic>
+     </font>
+    </property>
+    <property name="text">
+     <string>SUBMIT CLASS SIZE</string>
     </property>
    </widget>
   </widget>
@@ -101,7 +255,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>436</width>
      <height>26</height>
     </rect>
    </property>
